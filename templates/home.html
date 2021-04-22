@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Welcome To KnowledgeRepo</h1>
+    <p class="lead">This website is for soulful sharing of knowledge to the world. This site is build on python flask.</p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+    
+    <!--<h1>{{ userrole }}</h1>-->
+    {% if userrole.role == 'admin' %}
+      <a href="/reviews" class="btn btn-success btn-lg">Review</a>
+      <a href="/edits" class="btn btn-success btn-lg">Edit Log</a>
+    {% endif %}
+  </div>
+{% endblock %}

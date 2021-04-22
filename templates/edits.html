@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Username</th>
+      <th>Edited Article</th>
+      <th>Last edit</th>
+    </tr>
+    {% for logs in edits_logs %}
+        <tr>
+            <td>{{ logs.username }} </td>
+            <td>{{ logs.article }} </td>
+            <td>{{ logs.edit_date }} </td>
+           
+        </tr>
+    {% endfor %}
+  </table>
+
+  <form action="{{url_for('clear')}}" method="post">
+    <input type="hidden" name="_method" value="CLEAR">
+    <input type="submit" value="Clear" class="btn btn-danger">
+  </form>
+{% endblock %}

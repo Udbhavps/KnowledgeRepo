@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Articles to review</h1>
+  <ul class="list-group">
+    {% for article in articles %}
+      {% if article.status != 'approved' %}
+        <li class="list-group-item"><a href="review/{{article.id}}">{{article.title}}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}
