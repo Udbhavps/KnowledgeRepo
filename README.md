@@ -31,7 +31,7 @@ enter the value of the password that you used to enter mysql root console.
 o	Run the application using command 
 Python app.py
 
-o	Hurray the application is app and running in
+o	Hurray the application is up and running in
 localhost:5000
 
 Thank you.
